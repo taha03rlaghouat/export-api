@@ -1,0 +1,23 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\setmainfont{Charis SIL}
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+\usepackage[arabic,english]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{longtable}
+
+\begin{document}
+\begin{center}
+\section*{📚 قائمة الكلمات المترجمة}
+\begin{longtable}{|c|>{\arabicfont}c|c|}
+\hline
+\textbf{Lemma} & \textbf{الترجمة} & \textbf{النطق} \\
+\hline
+{% for lemma, translation, pronunciation in rows %}
+{{ lemma }} & {{ translation }} & {{ pronunciation }} \\
+\hline
+{% endfor %}
+\end{longtable}
+\end{center}
+\end{document}
